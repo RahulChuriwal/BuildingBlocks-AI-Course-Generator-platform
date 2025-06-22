@@ -5,6 +5,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import axios from 'axios';
 import { eq } from 'drizzle-orm';
 import { NextResponse } from 'next/server';
+import {ai} from  '../../../lib/ai'
 
 const PROMPT = `Generate Learning Course depends on following details. In which Make sure to add Course Name, 
 Description, Course Banner Image Prompt Depends on Course Topics in 3d illustration.
@@ -33,7 +34,7 @@ Schema:
 User Input:
 `;
 
-export const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// export const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 export async function POST(req) {
   try {
